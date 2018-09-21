@@ -40,6 +40,7 @@ Assumptions:
       to be available as %s.
       Script is known not to work with Heimdal Kerberos compatible ktutil.
 2.    argparse, pexpect Python modules should be available.
+
 History:
     01/16/2017  rdautkhanov@epsilon.com - 1.0   Initial version
     09/21/2018   kcarlile@gmail.com - 1.1        Changed out optarg for argparse
