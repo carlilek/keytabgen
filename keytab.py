@@ -15,7 +15,7 @@ ktutil = '/usr/bin/ktutil'
 child = pexpect.spawn(ktutil)
 default_prompt = 'ktutil:  '
 
-def kinit_test():
+def kinit_test(keytab, principal):
     """
     Runs kinit to create a Kerberos ticket using (just) generated keytab file.
     Returns kinit's return code (0 == OK)
@@ -66,7 +66,7 @@ def main(argv):
 
     if Debug: print(args)
     if args.test:
-        sys.exit(kinit_test())
+        sys.exit(kinit_test(keytab, principal))
 
 
     # wait for ktutil to show its first prompt
@@ -121,7 +121,7 @@ def main(argv):
     
     # 6. Optionally test newly created/update keytab
     if args.andtest:
-        kinit_test()
+        kinit_test(keytab, principal)
 
 
 if __name__ == "__main__":
