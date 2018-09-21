@@ -9,6 +9,10 @@ import os
 default_keytab = os.path.join(os.getenv('HOME'), '.keytab')
 default_domain = 'HHMI.ORG'
 ktutil = '/usr/bin/ktutil'
+
+
+# 0. Start ktutil command as a child process
+child = pexpect.spawn(ktutil)
 default_prompt = 'ktutil:  '
 
 def kinit_test():
@@ -64,8 +68,6 @@ def main(argv):
     if args.test:
         sys.exit(kinit_test())
 
-    # 0. Start ktutil command as a child process
-    child = pexpect.spawn(ktutil)
 
     # wait for ktutil to show its first prompt
     wait()
