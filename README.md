@@ -5,15 +5,15 @@ Keytab file maintenance utility.
 Usage:
 
     keytab.py [-u | --update] <username> [--domain=realm] [--keytab=filename]
-                                         [--and-test] [--algorithms=list] [--kvno=entry]
+                                         [--andtest] [--algorithms=list] [--kvno=entry]
                                          [-d | --debug]
                                          
-    keytab.py test <username> [--domain=realm] [--keytab=filename]
+    keytab.py <username> --test [--domain=realm] [--keytab=filename]
     keytab.py (-h | --help)
     
 Arguments:
-    <username>      Is your Windows / Active Directory login name
-                    (and not UNIX login, in case if it's different from AD login).
+
+    <username>      Is your Windows / Active Directory login name (and not UNIX login, in case if it's different from AD login).
 
 Options:
 
