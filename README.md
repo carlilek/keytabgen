@@ -17,23 +17,23 @@ Arguments:
 
 Options:
 
---test               Use generated keytab with kinit to test creating Kerberos ticket.
+    --test               Use generated keytab with kinit to test creating Kerberos ticket.
 
--h --help            Show this screen
+    -h --help            Show this screen
 
---update             Overwrites just --kvno keytab entry and leaves other entries the same.
+    --update             Overwrites just --kvno keytab entry and leaves other entries the same.
 
---domain=realm       Kerberos domain / AD realm [default: %s]
+    --domain=realm       Kerberos domain / AD realm [default: %s]
 
---keytab=filename    Keytab location [default: %s]
+    --keytab=filename    Keytab location [default: %s]
 
---and-test           After keytab is created/updated, try to use it by creating a Kerberos ticket
+    --and-test           After keytab is created/updated, try to use it by creating a Kerberos ticket
 
--d --debug           Print debug information. Note: password is visible in the log output with -d
+    -d --debug           Print debug information. Note: password is visible in the log output with -d
 
---algorithms=list    List of algorithm(s) used for each keytab entry. The list has to be comma-separated [default: rc4-hmac,aes256-cts]
+    --algorithms=list    List of algorithm(s) used for each keytab entry. The list has to be comma-separated [default: rc4-hmac,aes256-cts]
 
---kvno=entry         Key entry in keytab, passed as -k kvno argument to ktutil's addent command [default: 1]
+    --kvno=entry         Key entry in keytab, passed as -k kvno argument to ktutil's addent command [default: 1]
 
 Assumptions:
 1.    This script expects MIT Kerberos compatible ktutil command
@@ -42,5 +42,7 @@ Assumptions:
 2.    argparse, pexpect Python modules should be available.
 
 History:
+    
     01/16/2017  rdautkhanov@epsilon.com - 1.0   Initial version
+   
     09/21/2018   kcarlile@gmail.com - 1.1        Changed out optarg for argparse
