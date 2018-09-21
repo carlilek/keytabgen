@@ -1,5 +1,6 @@
 # keytabgen
 keytabgen.py
+
 Keytab file maintenance utility.
 Usage:
     keytab.py [-u | --update] <username> [--domain=realm] [--keytab=filename]
