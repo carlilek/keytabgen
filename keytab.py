@@ -7,7 +7,7 @@ import sys
 import os
 
 default_keytab = os.path.join(os.getenv('HOME'), '.keytab')
-default_domain = 'HHMI.ORG'
+default_domain = os.getenv('REALM')
 ktutil = '/usr/bin/ktutil'
 
 
@@ -62,6 +62,9 @@ def main(argv):
 
     Debug = args.debug
     keytab = args.keytab
+    if domain=None:
+        print('Please export REALM=<DOMAIN_NAME> or use the --domain flag to set a domain (uppercase)')
+        sys.exit(1)
     principal = args.username +'@'+ args.domain
 
     if Debug: print(args)
