@@ -1,5 +1,6 @@
-keytabgen.py
+keytabgen
 
+keytab.py
 Keytab file maintenance utility.
 
 Usage:
@@ -23,9 +24,9 @@ Options:
 
     --update             Overwrites just --kvno keytab entry and leaves other entries the same.
 
-    --domain=realm       Kerberos domain / AD realm [default: %s]
+    --domain=realm       Kerberos domain / AD realm 
 
-    --keytab=filename    Keytab location [default: %s]
+    --keytab=filename    Keytab location
 
     --and-test           After keytab is created/updated, try to use it by creating a Kerberos ticket
 
@@ -36,13 +37,17 @@ Options:
     --kvno=entry         Key entry in keytab, passed as -k kvno argument to ktutil's addent command [default: 1]
 
 Assumptions:
-1.    This script expects MIT Kerberos compatible ktutil command
+1. 	  Script expects an environment variable named REALM to be set with the Kerberos domain/realm (typically      upper case domain name). Otherwise specify --domain
+2.    This script expects MIT Kerberos compatible ktutil command
       to be available as %s.
       Script is known not to work with Heimdal Kerberos compatible ktutil.
-2.    argparse, pexpect Python modules should be available.
+3.    argparse, pexpect Python modules should be available.
 
 History:
     
     01/16/2017  rdautkhanov@epsilon.com - 1.0   Initial version
    
     09/21/2018   kcarlile@gmail.com - 1.1        Changed out optarg for argparse
+
+addtocron.sh
+Adds kinit -k -t .keytab to user's crontab to ensure ticket is properly renewed and not dropped. 
